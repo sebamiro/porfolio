@@ -1,0 +1,10 @@
+
+{%- set project = get_page(path="fract-ol.md") -%}
+
+{%- set content = project.content -%}
+
+ <section class="section">
+   <div class="container">
+     {{- content | spaceless | trim | safe -}}
+   </div>
+ </section>

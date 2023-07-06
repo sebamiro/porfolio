@@ -11,6 +11,6 @@ jobs:
         env:
           PAGES_BRANCH: build
           BUILD_DIR: .
-          TOKEN: ${{ secrets.PUBLIC_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
           # TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

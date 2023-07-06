@@ -9,7 +9,7 @@ jobs:
       - name: 'build and deploy'
         uses: shalzz/zola-deploy-action@v0.17.2
         env:
-          PAGES_BRANCH: main
-          BUILD_DIR: ./public
+          PAGES_BRANCH: build
+          BUILD_DIR: .
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

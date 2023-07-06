@@ -25,4 +25,3 @@ jobs:
           PAGES_BRANCH: main
           BUILD_DIR: .
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPOSITORY: sebamiro/porfolio.github.

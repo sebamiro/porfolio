@@ -2,17 +2,19 @@
 
 <div class="projects" >
 {% for project in projects.pages %}
-	{% set open = False %}
 	<input
-		type="checkbox" id={{ project.title }}  name={{ project.title }}
-		value="menu-visibility" hidden onchange="{% set open = open %}" />
-	<label for={{ project.title }} >
+		type="checkbox"
+		id="{{ project.title }}"
+		name="{{ project.title }}"
+		value="menu-visibility"
+		hidden  />
+	<label for="{{ project.title }}" >
 		<span>
 			{{ project.title }}
 		</span>
 	</label>
 
-	<div {% if open %}class="deployable"{% else %}hidden{% endif %}>
+	<div class="deployable" >
 		<div class="content">
 			{{- project.content | spaceless | trim | safe -}}
 		</div>

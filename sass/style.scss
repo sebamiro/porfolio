@@ -38,16 +38,12 @@ body {
   transition: all .5s;
 }
 
-.deployable {
-  max-width: 10000px;
-  max-height: 10000px;
-}
+/* input:checked ~ .deployable { */
+  	/* max-width: 10000px; */
+	/* max-height: 10000px; */
+/* } */
 
-input + label .span-nochecked { display: block; }
-input + label .span-checked { display: none; }
-
-/* input:checked + label { display: none; } */
-/* input:checked + label { display: block; } */
+input + label { display: block; }
 
 
 /* ABOUT  */

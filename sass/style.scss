@@ -4,6 +4,8 @@
 }
 
 .content {
+	right: 0;
+	top: 0;
 	font-family: monospace;
 	color: #fff;
 	height: 65vmin;
@@ -38,10 +40,11 @@ body {
   transition: all .5s;
 }
 
-/* input:checked ~ .deployable { */
-  	/* max-width: 10000px; */
-	/* max-height: 10000px; */
-/* } */
+input:checked ~ .deployable {
+  	max-width: 10000px;
+	max-height: 10000px;
+}
+
 
 input + label { display: block; }
 
@@ -72,8 +75,14 @@ input + label { display: block; }
 	color: #ea6000;
 }
 
-.projects {
+.projects-container {
+	position: relative;
+	height: 60%;
+	width: 60%;
 	display: flex;
 	flex-direction: column;
-	background: red;
+}
+
+.project {
+	display: flex;
 }

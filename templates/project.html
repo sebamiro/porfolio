@@ -1,10 +1,21 @@
+{%- set projects = get_section(path="projects/_index.md") -%}
 
-{%- set project = get_page(path="fract-ol.md") -%}
+<div class="projects" >
+{% for project in projects.pages %}
+	{% set open = False %}
+	<input
+		type="checkbox" id={{ project.title }}  name={{ project.title }}
+		value="menu-visibility" hidden onchange="{% set open = open %}" />
+	<label for={{ project.title }} >
+		<span>
+			{{ project.title }}
+		</span>
+	</label>
 
-{%- set content = project.content -%}
-
- <section class="section">
-   <div class="container">
-     {{- content | spaceless | trim | safe -}}
-   </div>
- </section>
+	<div {% if open %}class="deployable"{% else %}hidden{% endif %}>
+		<div class="content">
+			{{- project.content | spaceless | trim | safe -}}
+		</div>
+	</div>
+{% endfor %}
+</div>

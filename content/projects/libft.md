@@ -1,5 +1,6 @@
 +++
-title = "List of blog posts"
+title = "Libft"
+template = "project.html"
 +++
 
 # Fract-ol

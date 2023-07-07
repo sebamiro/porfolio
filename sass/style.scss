@@ -1,5 +1,83 @@
-.section {
+@font-face {
+	font-family: 'type';
+	src: url('/IBMPlexMono-Regular.ttf')
+}
+
+.content {
+	font-family: monospace;
+	color: #fff;
+	height: 65vmin;
+	width: 70vmin;
+	background: #0e1116;
+	padding: 1vmin;
+	border-bottom:solid 0.3vmin #080909;
+	border-right:solid 0.4vmin #080909;
+	border-radius: 0.5em;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	background: #181818;
+	position: absolute;
+	font-family: 'type';
+	color: #fff;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+}
+
+/* DEPLOYABLE */
+
+.deployable {
+  max-width: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all .5s;
+}
+
+.deployable {
+  max-width: 10000px;
+  max-height: 10000px;
+}
+
+input + label .span-nochecked { display: block; }
+input + label .span-checked { display: none; }
+
+/* input:checked + label { display: none; } */
+/* input:checked + label { display: block; } */
+
+
+/* ABOUT  */
+
+.about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 50vmin;
+	width: 30%;
+}
+
+.name-title {
+	color: #fff;
+	font-size: 3.5vmin;
+	margin-bottom: 0;
+}
+
+.sub-header {
+	font-size: 1.5vmin;
+}
+
+.sub-header em,
+.name-title em {
+	font-style: normal;
+	color: #ea6000;
+}
+
+.projects {
+	display: flex;
+	flex-direction: column;
 	background: red;
-	width: 50%;
-	height: 100%;
 }

@@ -2,7 +2,7 @@
 title = "minishell"
 template = "project.html"
 weight = 7
-id = "minishell"
+description = "minishell"
 +++
 
 # Fract-ol

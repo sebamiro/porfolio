@@ -2,8 +2,7 @@
 title = "fract-ol"
 template = "project.html"
 weight = 3
-[extra]
-id = "fractol"
+description = "fractol"
 +++
 
 # Fract-ol

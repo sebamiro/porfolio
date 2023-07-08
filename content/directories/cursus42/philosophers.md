@@ -2,8 +2,7 @@
 title = "philosophers"
 template = "project.html"
 weight = 6
-[extra]
-id = "philosophers"
+description = "philosophers"
 +++
 
 # Fract-ol

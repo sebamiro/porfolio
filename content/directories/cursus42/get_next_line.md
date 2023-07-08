@@ -2,8 +2,7 @@
 title = "get_next_line"
 template = "project.html"
 weight = 2
-[extra]
-id = "get_next_line"
+description = "get_next_line"
 +++
 
 # Fract-ol

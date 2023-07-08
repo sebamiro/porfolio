@@ -2,8 +2,7 @@
 title = "ft_irc"
 template = "project.html"
 weight = 9
-[extra]
-id = "ft_irc"
+description = "ft_irc"
 +++
 
 # Fract-ol

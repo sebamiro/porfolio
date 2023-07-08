@@ -2,8 +2,7 @@
 title = "ft_transcendance"
 template = "project.html"
 weight = 11
-[extra]
-id = "ft_transcendance"
+description = "ft_transcendance"
 +++
 
 # Fract-ol

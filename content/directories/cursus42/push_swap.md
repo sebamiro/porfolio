@@ -2,8 +2,7 @@
 title = "push_swap"
 template = "project.html"
 weight = 4
-[extra]
-id = "push_swap"
+description = "push_swap"
 +++
 
 # Fract-ol

@@ -2,8 +2,7 @@
 title = "printf"
 template = "project.html"
 weight = 1
-[extra]
-id = "printf"
+description = "printf"
 +++
 
 # Fract-ol

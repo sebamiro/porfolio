@@ -1,8 +1,9 @@
 +++
-title = "libft"
+title = "ft_irc"
 template = "project.html"
-weight = 0
-id = "libft"
+weight = 9
+[extra]
+id = "ft_irc"
 +++
 
 # Fract-ol

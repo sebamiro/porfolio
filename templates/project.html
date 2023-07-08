@@ -4,17 +4,20 @@
 <div class="projects-container" >
 {%- set projects = get_section(path=directory) -%}
 
-<h3>{{ projects.title }}</h3>
-
+<p class="directory-title" >{{ projects.title ~ "/" }}</p>
+<div class="content" style="position: absolute;">
+	{{ projects.content | spaceless | trim | safe }}
+</div>
 {% for project in projects.pages %}
 <div class="project" >
+	<div class="tree-directory"></div>
 	<input
 		type="checkbox"
-		id="{{ project.title }}"
-		name="{{ project.title }}"
+		id="{{ project.id }}"
+		name="{{ project.id }}"
 		value="menu-visibility"
 		hidden  />
-	<label for="{{ project.title }}" >
+	<label for="{{ project.id }}" >
 		<span>
 			{{ project.title }}
 		</span>

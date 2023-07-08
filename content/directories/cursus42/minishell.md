@@ -1,8 +1,8 @@
 +++
-title = "libft"
+title = "minishell"
 template = "project.html"
-weight = 0
-id = "libft"
+weight = 7
+id = "minishell"
 +++
 
 # Fract-ol

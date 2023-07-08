@@ -1,8 +1,9 @@
 +++
-title = "libft"
+title = "push_swap"
 template = "project.html"
-weight = 0
-id = "libft"
+weight = 4
+[extra]
+id = "push_swap"
 +++
 
 # Fract-ol

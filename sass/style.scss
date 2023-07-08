@@ -37,12 +37,15 @@ body {
   max-width: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all .5s;
 }
 
 input:checked ~ .deployable {
   	max-width: 10000px;
 	max-height: 10000px;
+}
+
+input:checked ~ .deployable > .content {
+  	position: absolute;
 }
 
 
@@ -84,5 +87,25 @@ input + label { display: block; }
 }
 
 .project {
+	margin-left: 2vmin;
+	margin-bottom: 1vmin;
 	display: flex;
+}
+
+.directory-title {
+	font-size: 3vmin;
+	margin-bottom: 1vmin;
+}
+
+/* SHAPE  */
+
+.tree-directory {
+  width: 1.1rem;
+  height: 1rem;
+  border: 0.08rem solid #fff;
+  border-right: 0;
+  border-top: 0;
+  margin-right: 1vmin;
+
+  transform: translateY(-0.3rem);
 }

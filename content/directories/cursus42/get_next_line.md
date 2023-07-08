@@ -1,8 +1,9 @@
 +++
-title = "libft"
+title = "get_next_line"
 template = "project.html"
-weight = 0
-id = "libft"
+weight = 2
+[extra]
+id = "get_next_line"
 +++
 
 # Fract-ol

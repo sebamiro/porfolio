@@ -1,8 +1,9 @@
 +++
-title = "libft"
+title = "printf"
 template = "project.html"
-weight = 0
-id = "libft"
+weight = 1
+[extra]
+id = "printf"
 +++
 
 # Fract-ol

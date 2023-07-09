@@ -21,6 +21,6 @@ Fractals List:
 - Celtic mandelbar
 - Perpendicular celtic
 
-<img alt="fract-ol-image" src="/fractol.png" >
+<img alt="fract-ol-image" src='fractol.png' >
 
 [GitHub](https://github.com/sebamiro/fract-ol/)

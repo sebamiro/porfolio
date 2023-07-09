@@ -5,26 +5,30 @@ weight = 0
 description = "libft"
 +++
 
-# Fract-ol
+# LIBFT
 
-Multithreaded fractal exploration program written in C
+Is an individual project that requieres to create a C library for future projects,
+it has some re-implemented standard C functions, and other non-standar functions.
+We get a deeper understanding of data structures and basic algorithms. During the
+cursus we are only allowed to use functions that we have programed, so we have to
+keep growing this libary with anything we would find useful.
 
-## Usage
+```
+char*
+ft_strjoin(const char *s1, const char *s2)
+{
+	size_t	total;
+	char	*str;
 
-     git clone https://github.com/sebamiro/fract-ol && cd fract-ol
-     make
-     ./bin/fract-ol
+	total = ft_strlen(s1) + ft_strlen(s2) + 1;
+	str = ft_calloc(total, 1);
+	if (!str)
+		return (NULL);
+	ft_strlcat(str, s1, total);
+	ft_strlcat(str, s2, total);
+	return (str);
+}
+```
 
-Parameter list: \
-\- Mandelbrot \
-\- Julia \
-\- Burning ship \
-\- Mandelbar \
-\- Heart \
-\- Buffalo \
-\- Perpendicular mandelbrot \
-\- Celtic mandelbrot \
-\- Celtic mandelbar \
-\- Perpendicular celtic
+[GitHub](https://github.com/sebamiro/libft42/)
 
-<img width="700" alt="fract-ol-image" src="https://user-images.githubusercontent.com/88943673/212963138-4ac4e02a-7189-4516-bca3-64e2ec90bc24.png" >

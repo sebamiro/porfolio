@@ -5,7 +5,7 @@ weight = 9
 description = "ft_irc"
 +++
 
-# Fract-ol
+# IRC
 
 Multithreaded fractal exploration program written in C
 
@@ -26,5 +26,3 @@ Parameter list: \
 \- Celtic mandelbrot \
 \- Celtic mandelbar \
 \- Perpendicular celtic
-
-<img width="700" alt="fract-ol-image" src="https://user-images.githubusercontent.com/88943673/212963138-4ac4e02a-7189-4516-bca3-64e2ec90bc24.png" >

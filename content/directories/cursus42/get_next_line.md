@@ -5,26 +5,32 @@ weight = 2
 description = "get_next_line"
 +++
 
-# Fract-ol
+# GET_NEXT_LINE
 
-Multithreaded fractal exploration program written in C
+Is an individual project about creating a function that returns the next line
+from a file descriptor, without knowing its size beforehand.
+One of the goal of this project is to learn a highly interesting
+new concept in C programming: static variables, and to gain a deeper understanding
+of allocations, whether they happen on the stack memory or in the heap memory,
+the manipulation and the life cycle of a buffer, the unexpected complexity implied
+in the use of one or many static variables.
+<br><br><br>
+```
+char*
+get_next_line(int fd)
+{
+	static char	*staticbuf;
+	char		*line;
 
-## Usage
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+		return (NULL);
+	staticbuf = ftread(fd, staticbuf);
+	if (!staticbuf)
+		return (NULL);
+	line = findline(staticbuf);
+	staticbuf = nextline(staticbuf);
+	return (line);
+}
+```
 
-     git clone https://github.com/sebamiro/fract-ol && cd fract-ol
-     make
-     ./bin/fract-ol
-
-Parameter list: \
-\- Mandelbrot \
-\- Julia \
-\- Burning ship \
-\- Mandelbar \
-\- Heart \
-\- Buffalo \
-\- Perpendicular mandelbrot \
-\- Celtic mandelbrot \
-\- Celtic mandelbar \
-\- Perpendicular celtic
-
-<img width="700" alt="fract-ol-image" src="https://user-images.githubusercontent.com/88943673/212963138-4ac4e02a-7189-4516-bca3-64e2ec90bc24.png" >
+[GitHub](https://github.com/sebamiro/get_next_line42/)

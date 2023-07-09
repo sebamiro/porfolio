@@ -5,26 +5,21 @@ weight = 4
 description = "push_swap"
 +++
 
-# Fract-ol
+# Push_swap
 
-Multithreaded fractal exploration program written in C
+Is an individual project about creating two-stack integer sorting algorithm,
+using a predefined set of instructions
 
-## Usage
+		sa:   swaps the 2 top elements of stack a
+		sb:   swaps the 2 top elements of stack b
+		ss:   both sa and sb
+		pa:   moves the top element of stack b at the top of stack a
+		pb:   moves the top element of stack a at the top of stack b
+		ra:   shifts all elements of stack a from bottom to top
+		rb:   shifts all elements of stack b from bottom to top
+		rr:   both ra and rb
+		rra:  shifts all elements of stack a from top to bottom
+		rrb:  shifts all elements of stack b from top to bottom
+		rrr:  both rra and rrb
 
-     git clone https://github.com/sebamiro/fract-ol && cd fract-ol
-     make
-     ./bin/fract-ol
-
-Parameter list: \
-\- Mandelbrot \
-\- Julia \
-\- Burning ship \
-\- Mandelbar \
-\- Heart \
-\- Buffalo \
-\- Perpendicular mandelbrot \
-\- Celtic mandelbrot \
-\- Celtic mandelbar \
-\- Perpendicular celtic
-
-<img width="700" alt="fract-ol-image" src="https://user-images.githubusercontent.com/88943673/212963138-4ac4e02a-7189-4516-bca3-64e2ec90bc24.png" >
+[GitHub](https://github.com/sebamiro/push_swap42/)

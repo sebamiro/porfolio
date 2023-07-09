@@ -5,26 +5,38 @@ weight = 1
 description = "printf"
 +++
 
-# Fract-ol
+# PRINTF
 
-Multithreaded fractal exploration program written in C
+Is an individual project about recoding the famous printf C function
+into its own library, to learn about variadic functions and improve algorithmic methodology
+<br>
+<br>
+<br>
+- %: (% character)
+- c: char (character)
+- s: char * (string)
+- p: void * (pointer's address)
+- u: unsigned int (unsigned decimal integer)
+- x/X: unsigned int (hexadecimal)
+- d/i: int (integer)
 
-## Usage
+```
+int
+findtype(va_list ap, char c)
+{
+	if (c == '%')
+		return (write(1, "%", 1));
+	else if (c == 'c')
+		return (handlechar(ap));
+	else if (ft_strchr(c, "diuxX"))
+		return (handlenbr(ap, c));
+	else if (c == 's')
+		return (handlestr(ap));
+	else if (c == 'p')
+		return (handleptr(ap));
+	return (-1);
+}
 
-     git clone https://github.com/sebamiro/fract-ol && cd fract-ol
-     make
-     ./bin/fract-ol
+```
 
-Parameter list: \
-\- Mandelbrot \
-\- Julia \
-\- Burning ship \
-\- Mandelbar \
-\- Heart \
-\- Buffalo \
-\- Perpendicular mandelbrot \
-\- Celtic mandelbrot \
-\- Celtic mandelbar \
-\- Perpendicular celtic
-
-<img width="700" alt="fract-ol-image" src="https://user-images.githubusercontent.com/88943673/212963138-4ac4e02a-7189-4516-bca3-64e2ec90bc24.png" >
+[GitHub](https://github.com/sebamiro/printf42/)

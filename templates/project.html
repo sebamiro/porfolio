@@ -1,3 +1,5 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 {%- set directories = get_section(path="directories/_index.md") -%}
 
 {% for directory in directories.subsections %}
@@ -10,17 +12,38 @@
 </div>
 {% for project in projects.pages %}
 <div class="project" >
+	<script type="text/javascript">
+		$('input[type="checkbox"]').on('change', function() {
+		   $('input[type="checkbox"]').not(this).prop('checked', false);
+		   $.each($('input[type="checkbox"]').not(this), function(index, value) {
+		   	changeLabel(value.id);
+		   });
+		});
+
+		function changeLabel(id) {
+
+		  var _checkbox = document.getElementById(id);
+		  var _label = document.getElementById('label_' + id);
+		  if (!_checkbox.checked) {
+		    _label.innerHTML = _checkbox.name;
+		  } else {
+		    _label.innerHTML = _checkbox.name + '/';
+		  }
+		}
+
+	</script>
 	<div class="tree-directory"></div>
 	<input
 		type="checkbox"
 		id="{{ project.description }}"
-		name="{{ project.description }}"
+		name="{{ project.title }}"
 		value="menu-visibility"
+		onclick="changeLabel('{{ project.description }}')"
 		hidden  />
-	<label for="{{ project.description }}" >
-		<span>
-			{{ project.title }}
-		</span>
+	<label
+		id="{{ 'label_' ~ project.description }}"
+		for="{{ project.description }}" >
+		{{ project.title | spaceless | trim }}
 	</label>
 
 	<div class="deployable" >

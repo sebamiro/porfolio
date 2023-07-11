@@ -5,7 +5,7 @@ weight = 0
 description = "libft"
 +++
 
-# LIBFT
+# Libft
 
 Is an individual project that requieres to create a C library for future projects,
 it has some re-implemented standard C functions, and other non-standar functions.
@@ -30,5 +30,13 @@ ft_strjoin(const char *s1, const char *s2)
 }
 ```
 
-[GitHub](https://github.com/sebamiro/libft42/)
+<div class="links">
 
+<div>
+<a target="blank" href="https://github.com/sebamiro/libft42/">GitHub</a>
+</div>
+<div>
+<a target="blank" href="https://cdn.intra.42.fr/pdf/pdf/90260/en.subject.pdf">Subject</a>
+</div>
+
+</div>

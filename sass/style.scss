@@ -35,9 +35,15 @@
 	border-radius: 0.3em;
 }
 
-input:checked ~ .deployable > .content a {
+input:checked ~ .deployable > .content .links {
 	position: absolute;
 	bottom: 1vmin;
+}
+
+.links {
+	display: flex;
+	/* justify-content: space-between; */
+	gap: 2vmin;
 }
 
 .content a {
@@ -87,6 +93,11 @@ input + label { display: block; }
 	align-items: center;
 	height: 50vmin;
 	width: 30%;
+}
+
+.about-description {
+	width: 60%;
+	text-align: justify;
 }
 
 .name-title {

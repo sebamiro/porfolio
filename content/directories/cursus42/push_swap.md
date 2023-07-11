@@ -7,8 +7,12 @@ description = "push_swap"
 
 # Push_swap
 
-Is an individual project about creating two-stack integer sorting algorithm,
-using a predefined set of instructions
+Is an individual project about creating an algorithm that efficiently sorts
+a stack of integers in ascending order using only a specific set of operations
+<br><br>
+
+There are two stacks: Stack A and Stack B, initially, all the numbers to be sorted
+are in Stack A, while Stack B is empty. Operations allowed on the stacks are limited:
 
 		sa:   swaps the 2 top elements of stack a
 		sb:   swaps the 2 top elements of stack b
@@ -22,4 +26,16 @@ using a predefined set of instructions
 		rrb:  shifts all elements of stack b from top to bottom
 		rrr:  both rra and rrb
 
-[GitHub](https://github.com/sebamiro/push_swap42/)
+The algorithm needs to be efficient, aiming for the smallest number of steps (operations) possible,
+taking into account edge cases and error handling.
+
+<div class="links">
+
+<div>
+<a target="blank" href="https://github.com/sebamiro/push_swap42/">GitHub</a>
+</div>
+<div>
+<a target="blank" href="https://cdn.intra.42.fr/pdf/pdf/90284/en.subject.pdf">Subject</a>
+</div>
+
+</div>

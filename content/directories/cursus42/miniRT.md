@@ -5,24 +5,25 @@ weight = 8
 description = "miniRT"
 +++
 
-# MINI_RT
+# MiniRT
 
-Multithreaded fractal exploration program written in C
+Is a group project about crating a ray tracer engine in C that handles scene files, multiple
+cameras and hard shadows with multiple light.
 
-## Usage
+Supported primitives:
+- spheres
+- planes
+- cylinders
 
-     git clone https://github.com/sebamiro/fract-ol && cd fract-ol
-     make
-     ./bin/fract-ol
+<img alt="fract-ol-image" src='miniRT.png' >
 
-Parameter list: \
-\- Mandelbrot \
-\- Julia \
-\- Burning ship \
-\- Mandelbar \
-\- Heart \
-\- Buffalo \
-\- Perpendicular mandelbrot \
-\- Celtic mandelbrot \
-\- Celtic mandelbar \
-\- Perpendicular celtic
+<div class="links">
+
+<div>
+<a target="blank" href="https://github.com/sebamiro/MiniRT">GitHub</a>
+</div>
+<div>
+<a target="blank" href="https://cdn.intra.42.fr/pdf/pdf/55533/en.subject.pdf">Subject</a>
+</div>
+
+</div>

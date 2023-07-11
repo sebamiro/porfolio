@@ -23,4 +23,13 @@ Fractals List:
 
 <img alt="fract-ol-image" src='fractol.png' >
 
-[GitHub](https://github.com/sebamiro/fract-ol/)
+<div class="links">
+
+<div>
+<a target="blank" href="https://github.com/sebamiro/fract-ol/">GitHub</a>
+</div>
+<div>
+<a target="blank" href="https://cdn.intra.42.fr/pdf/pdf/90302/en.subject.pdf">Subject</a>
+</div>
+
+</div>

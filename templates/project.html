@@ -21,9 +21,9 @@
 		});
 
 		function changeLabel(id) {
-
 		  var _checkbox = document.getElementById(id);
 		  var _label = document.getElementById('label_' + id);
+		  <!-- console.log(document.querySelectorAll('input[type=checkbox]')); -->
 		  if (!_checkbox.checked) {
 		    _label.innerHTML = _checkbox.name;
 		  } else {

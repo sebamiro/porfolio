@@ -5,7 +5,7 @@ weight = 1
 description = "printf"
 +++
 
-# PRINTF
+# Printf
 
 Is an individual project about recoding the famous printf C function
 into its own library, to learn about variadic functions and improve algorithmic methodology
@@ -39,4 +39,13 @@ findtype(va_list ap, char c)
 
 ```
 
-[GitHub](https://github.com/sebamiro/printf42/)
+<div class="links">
+
+<div>
+<a target="blank" href="https://github.com/sebamiro/printf42/">GitHub</a>
+</div>
+<div>
+<a target="blank" href="https://cdn.intra.42.fr/pdf/pdf/90275/en.subject.pdf">Subject</a>
+</div>
+
+</div>

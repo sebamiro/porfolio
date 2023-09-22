@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <title>Sebastián Miró</title>
-   <link rel="stylesheet" href="{{ get_url(path="style.css") }}" />
-</head>
+{% block content %}
+    {%- set directories = get_section(path="_index.md") -%}
+        
+    {% for directory in directories.subsections | reverse %}
+    {%- set year = get_section(path=directory) -%}
+    <h1>{{year.title}}</h1>
+    {% for project in year.pages | reverse %}
+    <li class="project-li" >
+        <a href={{ project.path }} >{{ project.title }}</a>
+        {{ project.description }}
+    </li>
+    {% endfor %}
+    {% endfor %}
 
-<body>
-	{%- include "about.html" -%}
-	{%- include "project.html" -%}
-</body>
-
-</html>
+{% endblock %}

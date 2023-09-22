@@ -1,57 +1,14 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+{% extends "base.html" %}
 
-{%- set directories = get_section(path="directories/_index.md") -%}
+{% block content %}
+{% if page.title %}
 
-{% for directory in directories.subsections %}
-<div class="projects-container" >
-{%- set projects = get_section(path=directory) -%}
+<div class="container">
 
-<p class="directory-title" >{{ projects.title ~ "/" }}</p>
-<div class="content" style="position: absolute;">
-	{{ projects.content | spaceless | trim | safe }}
+    <a href="/">Back</a>
+    {{ page.content | safe }}
+
 </div>
-{% for project in projects.pages %}
-<div class="project" >
-	<script type="text/javascript">
-		$('input[type="checkbox"]').on('change', function() {
-		   $('input[type="checkbox"]').not(this).prop('checked', false);
-		   $.each($('input[type="checkbox"]').not(this), function(index, value) {
-		   	changeLabel(value.id);
-		   });
-		});
 
-		function changeLabel(id) {
-		  var _checkbox = document.getElementById(id);
-		  var _label = document.getElementById('label_' + id);
-		  <!-- console.log(document.querySelectorAll('input[type=checkbox]')); -->
-		  if (!_checkbox.checked) {
-		    _label.innerHTML = _checkbox.name;
-		  } else {
-		    _label.innerHTML = _checkbox.name + '/';
-		  }
-		}
-
-	</script>
-	<div class="tree-directory"></div>
-	<input
-		type="checkbox"
-		id="{{ project.description }}"
-		name="{{ project.title }}"
-		value="menu-visibility"
-		onclick="changeLabel('{{ project.description }}')"
-		hidden  />
-	<label
-		id="{{ 'label_' ~ project.description }}"
-		for="{{ project.description }}" >
-		{{ project.title | spaceless | trim }}
-	</label>
-
-	<div class="deployable" >
-		<div class="content">
-			{{- project.content | spaceless | trim | safe -}}
-		</div>
-	</div>
-</div>
-{% endfor %}
-</div>
-{% endfor %}
+{% endif %}
+{% endblock %}

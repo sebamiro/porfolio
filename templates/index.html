@@ -6,7 +6,7 @@
     {% for directory in directories.subsections | reverse %}
     {%- set year = get_section(path=directory) -%}
     <h1>{{year.title}}</h1>
-    {% for project in year.pages %}
+    {% for project in year.pages | reverse %}
     <li class="project-li" >
         <a href={{ project.permalink }} >{{ project.title }}</a>
         {{ project.description }}

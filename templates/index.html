@@ -8,7 +8,7 @@
     <h1>{{year.title}}</h1>
     {% for project in year.pages | reverse %}
     <li class="project-li" >
-        <a href={{ get_url(path=project.path) }} >{{ project.title }}</a>
+        <a href={{ project.permalink }} >{{ project.title }}</a>
         {{ project.description }}
     </li>
     {% endfor %}

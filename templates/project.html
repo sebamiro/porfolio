@@ -3,12 +3,8 @@
 {% block content %}
 {% if page.title %}
 
-<div class="container">
-
     <a href={{ config.base_url }} >Back</a>
     {{ page.content | safe }}
-
-</div>
 
 {% endif %}
 {% endblock %}

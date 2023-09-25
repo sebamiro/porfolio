@@ -21,7 +21,7 @@ Supported primitives:
 - planes
 - cylinders
 
-<img alt="fract-ol-image" src='/miniRT.png' >
+<img alt="miniRT-image" src='../../miniRT.png' >
 
 ## Introduction
 

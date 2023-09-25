@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/printf42/">GitHub</a></p>
+<hr />
+<h1 id="printf">Printf</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about recoding the famous printf C function
+into its own library, to learn about variadic functions and improve algorithmic methodology
+<br></p>
+<ul>
+<li>%: (% character)</li>
+<li>c: char (character)</li>
+<li>s: char * (string)</li>
+<li>p: void * (pointer's address)</li>
+<li>u: unsigned int (unsigned decimal integer)</li>
+<li>x/X: unsigned int (hexadecimal)</li>
+<li>d/i: int (integer)</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>int
+</span><span>findtype(va_list ap, char c)
+</span><span>{
+</span><span>	if (c == &#39;%&#39;)
+</span><span>		return (write(1, &quot;%&quot;, 1));
+</span><span>	else if (c == &#39;c&#39;)
+</span><span>		return (handlechar(ap));
+</span><span>	else if (ft_strchr(c, &quot;diuxX&quot;))
+</span><span>		return (handlenbr(ap, c));
+</span><span>	else if (c == &#39;s&#39;)
+</span><span>		return (handlestr(ap));
+</span><span>	else if (c == &#39;p&#39;)
+</span><span>		return (handleptr(ap));
+</span><span>	return (-1);
+</span><span>}
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>You will discover a popular and versatile C function: printf(). This exercise is a great
+opportunity to improve your programming skills. It is of moderate difficulty.
+You will discover variadic functions in C.
+The key to a successful ft_printf is a well-structured and extensible code.</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Write a library that contains ft_printf(), a
+function that will mimic the original printf()</p>
+<p>You have to recode the printf() function from libc.
+The prototype of ft_printf() is:<br></p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>int ft_printf(const char *, ...);
+</span></code></pre>
+<p>Here are the requirements:</p>
+<ul>
+<li>Don’t implement the buffer management of the original printf().</li>
+<li>Your function will be compared against the original printf().</li>
+<li>You must use the command ar to create your library.
+Using the libtool command is forbidden.</li>
+<li>Your libftprintf.a has to be created at the root of your repository.</li>
+</ul>
+<p>You have to implement the following conversions:</p>
+<ul>
+<li><code>%c</code> Prints a single character.</li>
+<li><code>%s</code> Prints a string (as defined by the common C convention).</li>
+<li><code>%p</code> The void * pointer argument has to be printed in hexadecimal format.</li>
+<li><code>%d</code> Prints a decimal (base 10) number.</li>
+<li><code>%i</code> Prints an integer in base 10.</li>
+<li><code>%u</code> Prints an unsigned decimal (base 10) number.</li>
+<li><code>%x</code> Prints a number in hexadecimal (base 16) lowercase format.</li>
+<li><code>%X</code> Prints a number in hexadecimal (base 16) uppercase format.</li>
+<li><code>%%</code> Prints a percent sign.</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<ul>
+<li>Manage any combination of the following flags: ’-0.’ and the field minimum width
+under all conversions.</li>
+<li>Manage all the following flags: ’# +’ (Yes, one of them is a space)</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

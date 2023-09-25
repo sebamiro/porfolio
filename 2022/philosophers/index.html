@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/philosophers42">GitHub</a></p>
+<hr />
+<h1 id="philosophers">Philosophers</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about a classic problem in concurrent programming that
+involves simulating a scenario where a group of philosophers sits around a table,
+and each philosopher alternates between thinking, eating and sleeping.
+The philosophers are represented as concurrent threads or processes, and they
+interact with shared resources (forks) to eat, implementing synchronization mechanisms
+to prevent conflicts and ensure proper resource sharing as mutex locks and semaphores
+are used to avoid data races.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>pthread_mutex_lock(&amp;table-&gt;philo[philo-&gt;left_index].fork);
+</span><span>state(philo, FORK);
+</span><span>pthread_mutex_lock(&amp;table-&gt;philo[philo-&gt;rigth_index].fork);
+</span><span>state(philo, FORK);
+</span><span>pthread_mutex_lock(&amp;table-&gt;eat_check);
+</span><span>state(philo, EAT);
+</span><span>(philo-&gt;times_ate)++;
+</span><span>philo-&gt;last_eat = get_time();
+</span><span>pthread_mutex_unlock(&amp;table-&gt;eat_check);
+</span><span>ft_sleep(table-&gt;time_to_eat);
+</span><span>pthread_mutex_unlock(&amp;table-&gt;philo[philo-&gt;left_index].fork);
+</span><span>pthread_mutex_unlock(&amp;table-&gt;philo[philo-&gt;rigth_index].fork);
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>In this project, you will learn the basics of threading a process.
+You will see how to create threads and you will discover mutexes.</p>
+<p>Here are the things you need to know if you want to succeed this assignment:</p>
+<ul>
+<li>One or more philosophers sit at a round table.
+There is a large bowl of spaghetti in the middle of the table.</li>
+<li>The philosophers alternatively eat, think, or sleep.
+While they are eating, they are not thinking nor sleeping;
+while thinking, they are not eating nor sleeping;
+and, of course, while sleeping, they are not eating nor thinking.</li>
+<li>There are also forks on the table. There are as many forks as philosophers.</li>
+<li>Because serving and eating spaghetti with only one fork is very inconvenient, a
+philosopher takes their right and their left forks to eat, one in each hand.</li>
+<li>When a philosopher has finished eating, they put their forks back on the table and
+start sleeping. Once awake, they start thinking again. The simulation stops when
+a philosopher dies of starvation.</li>
+<li>Every philosopher needs to eat and should never starve.</li>
+<li>Philosophers don’t speak with each other.</li>
+<li>Philosophers don’t know if another philosopher is about to die.</li>
+<li>No need to say that philosophers should avoid dying!</li>
+</ul>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Philosophers with threads and mutexes</p>
+<ul>
+<li>Each philosopher should be a thread.</li>
+<li>There is one fork between each pair of philosophers. Therefore, if there are several
+philosophers, each philosopher has a fork on their left side and a fork on their right
+side. If there is only one philosopher, there should be only one fork on the table.</li>
+<li>To prevent philosophers from duplicating forks, you should protect the forks state
+with a mutex for each of them.</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>Philosophers with processes and semaphores</p>
+<p>The specific rules for the bonus part are:</p>
+<ul>
+<li>All the forks are put in the middle of the table.</li>
+<li>They have no states in memory but the number of available forks is represented by
+a semaphore.</li>
+<li>Each philosopher should be a process. But the main process should not be a
+philosopher.</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

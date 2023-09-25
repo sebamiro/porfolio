@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/MiniRT">GitHub</a></p>
+<hr />
+<h1 id="minirt">MiniRT</h1>
+<h2 id="summary">Summary</h2>
+<p>Is a group project about crating a ray tracer engine in C that handles scene files, multiple
+cameras and hard shadows with multiple light.</p>
+<p>Supported primitives:</p>
+<ul>
+<li>spheres</li>
+<li>planes</li>
+<li>cylinders</li>
+</ul>
+<img alt="miniRT-image" src='../../miniRT.png' >
+<h2 id="introduction">Introduction</h2>
+<p>When it comes to rendering 3-dimensional computer-generated images there are 2 possi-
+ble approaches: “Rasterization”, which is used by almost all graphic engines because
+of its efficiency and “Ray Tracing.”</p>
+<p>The “Ray Tracing” method, developed for the first time in 1968 (but improved upon
+since) is even today more expensive in computation than the “Rasterization” method.
+As a result, it is not yet fully adapted to real time use-cases but it produce a much higher
+degree of visual realism.</p>
+<p>Before you can even begin to produce such high-quality graphics, you must mas-
+ter the basics: the miniRT is your first ray tracer coded in C, normed and humble but
+functionnal.</p>
+<p>The main goal of miniRT is to prove to yourself that you can implement any mathe-
+matics or physics formulas without being a mathematician, we will only implement the
+most basics ray tracing features here so just keep calm, take a deep breath and don’t
+panic! After this project you’ll be able to show off nice-looking pictures to justify the
+number of hours you’re spending at school...</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>The goal of your program is to generate
+images using the Raytracing protocol. Those
+computer-generated images will each represent a
+scene, as seen from a specific angle and position,
+defined by simple geometric objects, and each with
+its own lighting system.</p>
+<p>The constraints are as follows:</p>
+<ul>
+<li>You must use the miniLibX. Either the version that is available on the operating
+system, or from its sources. If you choose to work with the sources, you will
+need to apply the same rules for your libft as those written above in Common
+Instructions part.</li>
+<li>The management of your window must remain smooth: changing to another win-
+dow, minimizing, etc.</li>
+<li>You need at least these 3 simple geometric objects: plane, sphere, cylinder.</li>
+<li>If applicable, all possible intersections and the inside of the object must be handled
+correctly.</li>
+<li>Your program must be able to resize the object’s unique properties: diameter for a
+sphere and the width and height for a cylinder.</li>
+<li>Your program must be able to apply translation and rotation transformation to
+objects, lights and cameras (except for spheres and lights that cannot be rotated).</li>
+<li>Light management: spot brightness, hard shadows, ambiance lighting (objects are
+never completely in the dark). You must implement Ambient and diffuse lighting.</li>
+<li>the program displays the image in a window and respect the following rules:
+<ul>
+<li>Pressing ESC must close the window and quit the program cleanly.</li>
+<li>Clicking on the red cross on the window’s frame must close the window and
+quit the program cleanly.</li>
+<li>The use of images of the minilibX is strongly recommended.</li>
+</ul>
+</li>
+<li>Your program must take as a first argument a scene description file with the .rt
+extension.
+<ul>
+<li>Each type of element can be separated by one or more line break(s).</li>
+<li>Each type of information from an element can be separated by one or more
+space(s).</li>
+<li>Each type of element can be set in any order in the file.</li>
+<li>Elements which are defined by a capital letter can only be declared once in
+the scene.</li>
+<li>Each element first’s information is the type identifier (composed by one or two
+character(s)), followed by all specific information for each object in a strict
+order such as:</li>
+<li>Ambient lightning : <code>A 0.2 255,255,255</code>
+<ul>
+<li>identifier: A</li>
+<li>ambient lighting ratio in range [0.0,1.0]: 0.2</li>
+<li>R,G,B colors in range [0-255]: 255, 255, 255</li>
+</ul>
+</li>
+<li>Camera : <code>C -50.0,0,20 0,0,1 70</code>
+<ul>
+<li>identifier: C</li>
+<li>x,y,z coordinates of the view point: 0.0,0.0,20.6</li>
+<li>3d normalized orientation vector. In range [-1,1] for each x,y,z axis:
+0.0,0.0,1.0</li>
+<li>FOV : Horizontal field of view in degrees in range [0,180]</li>
+</ul>
+</li>
+<li>Light : <code>L -40.0,50.0,0.0 0.6 10,0,255</code>
+<ul>
+<li>identifier: L</li>
+<li>x,y,z coordinates of the light point: 0.0,0.0,20.6</li>
+<li>the light brightness ratio in range [0.0,1.0]: 0.6</li>
+<li>R,G,B colors in range [0-255]: 10, 0, 255</li>
+</ul>
+</li>
+<li>Sphere : <code>sp 0.0,0.0,20.6 12.6 10,0,255</code>
+<ul>
+<li>identifier: sp</li>
+<li>x,y,z coordinates of the sphere center: 0.0,0.0,20.6</li>
+<li>the sphere diameter: 12.6</li>
+<li>R,G,B colors in range [0-255]: 10, 0, 255</li>
+</ul>
+</li>
+<li>Plane : <code>pl 0.0,0.0,-10.0 0.0,1.0,0.0 0,0,225</code>
+<ul>
+<li>identifier: pl</li>
+<li>x,y,z coordinates: 0.0,0.0,-10.0</li>
+<li>3d normalized orientation vector. In range [-1,1] for each x,y,z axis:
+0.0,0.0,1.0</li>
+<li>R,G,B colors in range [0-255]: 0, 0, 255</li>
+</ul>
+</li>
+<li>Cylinder : <code>cy 50.0,0.0,20.6 0.0,0.0,1.0 14.2 21.42 10,0,255</code>
+<ul>
+<li>x,y,z coordinates: 50.0,0.0,20.6</li>
+<li>3d normalized orientation vector. In range [-1,1] for each x,y,z axis:</li>
+<li>identifier: cy
+0.0,0.0,1.0</li>
+<li>the cylinder diameter: 14.2</li>
+<li>the cylinder height: 21.42</li>
+<li>R,G,B colors in range [0,255]: 10, 0, 255</li>
+</ul>
+</li>
+<li>Example of the mandatory part with a minimalist .rt scene:</li>
+</ul>
+</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>A 0.2 255,255,255
+</span><span>C -50,0,20 0,0,0 70
+</span><span>L -40,0,30 0.7 255,255,255
+</span><span>pl 0,0,0 0,1.0,0 255,0,225
+</span><span>sp 0,0,20 20 255,0,0
+</span><span>cy 50.0,0.0,20.6 0,0,1.0 14.2 21.42 10,0,255
+</span></code></pre>
+<ul>
+<li>If any misconfiguration of any kind is encountered in the file the program must exit
+properly and return &quot;Error\n&quot; followed by an explicit error message of your choice.</li>
+<li>For the defense, it would be ideal for you to have a whole set of scenes with the
+focus on what is functional, to facilitate the control of the elements to create.</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>The Ray-Tracing technique could handle many more things like reflection, transparency,
+refraction, more complex objects, soft shadows, caustics, global illumination, bump map-
+ping, .obj file rendering etc..</p>
+<p>But for the miniRT project, we want to keep things simple for your first raytracer and
+your first steps in CGI.</p>
+<p>So here is a list of few simple bonuses you could implement, if you want to do bigger
+bonuses we strongly advise you to recode a new ray-tracer later in your developer life
+after this little one is finished and fully functionnal.</p>
+<p>Bonus list:</p>
+<ul>
+<li>Add specular reflection to have a full Phong reflection model.</li>
+<li>Color disruption: checkerboard.</li>
+<li>Colored and multi-spot lights.</li>
+<li>One other 2nd degree object: Cone, Hyperboloid, Paraboloid..</li>
+<li>Handle bump map textures.</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

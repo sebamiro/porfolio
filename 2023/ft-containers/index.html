@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/ft_containers">GitHub</a></p>
+<hr />
+<h1 id="containers">Containers</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about implementing the various container
+types of the C++ standard template library, in C++98.</p>
+<ul>
+<li>
+<p>Stack: Container adaptor, use an encapsulated object of a specific
+container class as its underlying container, providing a set of member functions to access its elements. Last-in first-out.</p>
+</li>
+<li>
+<p>Vector: Implemented as dynamic arrays with the ability to resize itself automatically when an element is inserted or deleted,
+ith their storage being handled automatically by the container. The elements are stored contiguously, which means that can
+be accessed not only through iterators, but also using offsets to regular pointers to elements.</p>
+</li>
+<li>
+<p>Map: Is a sorted associative container that contains key-value pairs with unique keys. Keys are sorted by using the
+comparison function Compare. Search, removal, and insertion operations have logarithmic complexity. Implemented as a Red-Black tree.</p>
+</li>
+<li>
+<p>Set: Is container that store unique elements following a specific order. The value of an element also identifies it, cannot be modified once in the container
+(the elements are always const), but they can be inserted or removed from the container.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>  ├─ Vector
+</span><span>  ├─ Map
+</span><span>  ├─ Stack
+</span><span>  ├─ Set
+</span><span>  ├─ utility
+</span><span>  ├─ Itreator/
+</span><span>  │  ├─ iterator_traits
+</span><span>  │  ├─ random_access_iterator
+</span><span>  │  └─ reverse_iterator
+</span><span>  ├─ RedBlackTree/
+</span><span>  │  ├─ RBT
+</span><span>  │  ├─ RBT_iterator
+</span><span>  └  └─ node
+</span></code></pre>
+</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>The standard C++ containers have all a specific usage.
+To make sure you understand them, let’s re-implement them!</p>
+<p>In this project, you will implement a few container types of the C++ standard template
+library.
+You have to take the structure of each standard container as reference. If a part of
+the Orthodox Canonical form is missing in it, do not implement it.
+As a reminder, you have to comply with the C++98 standard, so any later feature of
+the containers MUST NOT be implemented, but every C++98 feature (even deprecated
+ones) is expected</p>
+<h3 id="compiling">Compiling</h3>
+<ul>
+<li>Compile your code with c++ and the flags -Wall -Wextra -Werror</li>
+<li>Your code should still compile if you add the flag -std=c++98</li>
+</ul>
+<h3 id="allowed-forbidden">Allowed/Forbidden</h3>
+<p>You are not coding in C anymore. Time to C++! Therefore:</p>
+<ul>
+<li>You are allowed to use everything from the standard library. Thus, instead of
+sticking to what you already know, it would be smart to use as much as possible
+the C++-ish versions of the C functions you are used to.</li>
+<li>However, you can’t use any other external library. It means C++11 (and derived
+forms) and Boost libraries are forbidden. The following functions are forbidden
+too: *printf(), *alloc() and free(). If you use them, your grade will be 0 and
+that’s it.</li>
+</ul>
+<h3 id="a-few-design-requirements">A few design requirements</h3>
+<ul>
+<li>Memory leakage occurs in C++ too. When you allocate memory, you must avoid
+memory leaks.</li>
+<li>Any function implementation put in a header file (except for function templates)
+means 0 to the exercise.</li>
+<li>You should be able to use each of your headers independently from others. Thus,
+they must include all the dependencies they need. However, you must avoid the
+problem of double inclusion by adding include guards. Otherwise, your grade will
+be 0.</li>
+</ul>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Implement the following containers and turn in the necessary &lt;container&gt;.hpp files:</p>
+<ul>
+<li>vector<br>
+You don’t have to do the vector&lt;bool&gt; specialization.</li>
+<li>map</li>
+<li>stack<br>
+It will use your vector class as default underlying container. But it must still be
+compatible with other containers, the STL ones included.
+You also have to implement:</li>
+<li>iterators_traits</li>
+<li>reverse_iterator</li>
+<li>enable_if<br>
+Yes, it is C++11 but you will be able to implement it in a C++98 manner.
+This is asked so you can discover SFINAE.</li>
+<li>is_integral</li>
+<li>equal and/or lexicographical_compare</li>
+<li>std::pair</li>
+<li>std::make_pair</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>The namespace must be ft.</li>
+<li>Each inner data structure used in your containers must be logical and justified (this
+means using a simple array for map is not ok).</li>
+<li>You cannot implement more public functions than the ones offered in the standard
+containers. Everything else must be private or protected. Each public function or
+variable must be justified.</li>
+<li>All the member functions, non-member functions and overloads of the standard
+containers are expected.</li>
+<li>You must follow the original naming. Take care of details.</li>
+<li>If the container has an iterator system, you must implement it.</li>
+<li>You must use std::allocator.</li>
+<li>For non-member overloads, the keyword friend is allowed. Each use of friend
+must be justified and will be checked during evaluation.</li>
+<li>Of course, for the implementation of map::value_compare, the keyword friend is
+allowed.</li>
+</ul>
+<h3 id="testing">Testing</h3>
+<ul>
+<li>You must also provide tests, at least a main.cpp, for your defense. You have to go
+further than the main given as example!</li>
+<li>You must produce two binaries that run the same tests: one with your containers
+only, and the other one with the STL containers.</li>
+<li>Compare outputs and performance / timing (your containers can be up to 20
+times slower).</li>
+<li>Test your containers with: ft::&lt;container&gt;.</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>You will get extra points if you implement one last container:</p>
+<ul>
+<li>set<br>
+But this time, a Red-Black tree is mandatory.</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

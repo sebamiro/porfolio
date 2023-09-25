@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/Minishell">GitHub</a></p>
+<hr />
+<h1 id="minishell">Minishell</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an group project about creating a basic shell program that allows users
+to execute commands, this includes running external programs, built-in commands,
+and handling command-line arguments, manage processes, and handle basic shell functionalities as:</p>
+<ul>
+<li>Environment variables, allowing users to set, unset, and modify variables.</li>
+<li>Input/Output redirection, allowing users to redirect the standard input and
+output of commands to files or other commands.</li>
+<li>Pipes (| character), the output of each command in the pipeline is
+connected to the input of the next command via a pipe.</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>int
+</span><span>ft_echo(t_cmd **cmd)
+</span><span>{
+</span><span>	int	i = 0;
+</span><span>	bool n_flag = false;
+</span><span>
+</span><span>	if (!(*cmd)-&gt;arg &amp;&amp; write(1, &quot;\n&quot;, 1))
+</span><span>		return (0);
+</span><span>	while ((*cmd)-&gt;arg[i] &amp;&amp; is_n_flag((*cmd)-&gt;arg[i])) {
+</span><span>		n_flag = true;
+</span><span>		i++;
+</span><span>	}
+</span><span>	while ((*cmd)-&gt;arg[i]) {
+</span><span>		putstr((*cmd)-&gt;arg[i]);
+</span><span>		if ((*cmd)-&gt;arg[i])
+</span><span>			write(1, &quot; &quot;, 1);
+</span><span>		i++;
+</span><span>	}
+</span><span>	if (!n_flag)
+</span><span>		write(1, &quot;\n&quot;, 1);
+</span><span>	return (0);
+</span><span>}
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>The existence of shells is linked to the very existence of IT.</p>
+<p>At the time, all developers agreed that communicating with a computer using aligned
+1/0 switches was seriously irritating.</p>
+<p>It was only logical that they came up with the idea of creating a software to com-
+municate with a computer using interactive lines of commands in a language somewhat
+close to the human language.</p>
+<p>Thanks to Minishell, you’ll be able to travel through time and come back to problems
+people faced when Windows didn’t exist.</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Write a shell that:</p>
+<ul>
+<li>Display a prompt when waiting for a new command.</li>
+<li>Have a working history.</li>
+<li>Search and launch the right executable (based on the PATH variable or using a
+relative or an absolute path).</li>
+<li>Avoid using more than one global variable to indicate a received signal. Consider
+the implications: this approach ensures that your signal handler will not access your
+main data structures.</li>
+<li>Not interpret unclosed quotes or special characters which are not required by the
+subject such as \ (backslash) or ; (semicolon).</li>
+<li>Handle ’ (single quote) which should prevent the shell from interpreting the meta-
+characters in the quoted sequence.</li>
+<li>Handle &quot; (double quote) which should prevent the shell from interpreting the meta-
+characters in the quoted sequence except for $ (dollar sign).</li>
+<li>Implement redirections:
+<ul>
+<li>&lt; should redirect input.</li>
+<li>&gt; should redirect output.</li>
+<li>&lt;&lt; should be given a delimiter, then read the input until a line containing the
+delimiter is seen. However, it doesn’t have to update the history!</li>
+<li>&gt;&gt; should redirect output in append mode.</li>
+</ul>
+</li>
+<li>Implement pipes (| character). The output of each command in the pipeline is
+connected to the input of the next command via a pipe.</li>
+<li>Handle environment variables ($ followed by a sequence of characters) which
+should expand to their values.</li>
+<li>Handle $? which should expand to the exit status of the most recently executed
+foreground pipeline.</li>
+<li>Handle ctrl-C, ctrl-D and ctrl-\ which should behave like in bash.</li>
+<li>In interactive mode:
+<ul>
+<li>ctrl-C displays a new prompt on a new line.</li>
+<li>ctrl-D exits the shell.</li>
+<li>ctrl-\ does nothing.</li>
+</ul>
+</li>
+<li>Your shell must implement the following builtins:
+<ul>
+<li>echo with option -n</li>
+<li>cd with only a relative or absolute path</li>
+<li>pwd with no options</li>
+<li>export with no options</li>
+<li>unset with no options</li>
+<li>env with no options or arguments</li>
+<li>exit with no options</li>
+</ul>
+</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>Your program has to implement:</p>
+<ul>
+<li>&amp;&amp; and || with parenthesis for priorities.</li>
+<li>Wildcards * should work for the current working directory.</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

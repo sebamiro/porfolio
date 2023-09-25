@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/minitalk42/">GitHub</a></p>
+<hr />
+<h1 id="minitalk">Minitalk</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about a small client-server comunication program
+through UNIX signals. It's mandatory to use just SIGUSR1 and SIGUSR2 (user defined signals),
+so the client program must send the text as a binary message, and the server
+keeps a buffer to store the received characters until the complete message is received,
+then the server prints it out.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>void
+</span><span>sendchar(int pid, char c)
+</span><span>{
+</span><span>	int	i = 0;
+</span><span>	int	signal = 0;
+</span><span>
+</span><span>	while (i &lt; 8)
+</span><span>	{
+</span><span>		if (c &amp; 128)
+</span><span>			signal = SIGUSR1;
+</span><span>		else
+</span><span>			signal = SIGUSR2;
+</span><span>		if (kill(pid, signal))
+</span><span>			exit(1);
+</span><span>		usleep(100);
+</span><span>		i++;
+</span><span>		c &lt;&lt;= 1;
+</span><span>	}
+</span><span>}
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>The purpose of this project is to code a small data exchange program
+using UNIX signals.</p>
+<h2 id="mandatory-part">Mandatory Part</h2>
+<p>You must create a communication program in the form of a client and a server.</p>
+<ul>
+<li>The server must be started first. After its launch, it has to print its PID.</li>
+<li>The client takes two parameters:
+<ul>
+<li>The server PID.</li>
+<li>The string to send.</li>
+</ul>
+</li>
+<li>The client must send the string passed as a parameter to the server.
+Once the string has been received, the server must print it.</li>
+<li>The server has to display the string pretty quickly. Quickly means that if you think
+it takes too long, then it is probably too long.</li>
+<li>Your server should be able to receive strings from several clients in a row without
+needing to restart.</li>
+<li>The communication between your client and your server has to be done only using
+UNIX signals.</li>
+<li>You can only use these two signals: SIGUSR1 and SIGUSR2</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>Bonus list:</p>
+<ul>
+<li>The server acknowledges every message received by sending back a signal to the
+client.</li>
+<li>Unicode characters support!</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

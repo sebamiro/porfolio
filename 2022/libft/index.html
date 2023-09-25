@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/libft42/">GitHub</a></p>
+<hr />
+<h1 id="libft">Libft</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project that requieres to create a C library for future projects,
+it has some re-implemented standard C functions, and other non-standar functions.
+We get a deeper understanding of data structures and basic algorithms. During the
+cursus we are only allowed to use functions that we have programed, so we have to
+keep growing this libary with anything we would find useful.</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>char*
+</span><span>ft_strjoin(const char *s1, const char *s2)
+</span><span>{
+</span><span>	size_t	total;
+</span><span>	char	*str;
+</span><span>
+</span><span>	total = ft_strlen(s1) + ft_strlen(s2) + 1;
+</span><span>	str = ft_calloc(total, 1);
+</span><span>	if (!str)
+</span><span>		return (NULL);
+</span><span>	ft_strlcat(str, s1, total);
+</span><span>	ft_strlcat(str, s2, total);
+</span><span>	return (str);
+</span><span>}
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>C programming can be very tedious when one doesn’t have access to the highly useful
+standard functions. This project is about understanding the way these functions work,
+implementing and learning to use them. Your will create your own library. It will be
+helpful since you will use it in your next C school assignments.
+Take the time to expand your libft throughout the year. However, when working
+on a new project, don’t forget to ensure the functions used in your library are allowed in
+the project guidelines</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Write your own library: a collection of functions
+that will be a useful tool for your cursus.</p>
+<h3 id="technical-considerations">Technical considerations</h3>
+<ul>
+<li>Declaring global variables is forbidden.</li>
+<li>If you need helper functions to split a more complex function, define them as static
+functions. This way, their scope will be limited to the appropriate file.</li>
+<li>Place all your files at the root of your repository.</li>
+<li>Turning in unused files is forbidden.</li>
+<li>Every .c files must compile with the flags -Wall -Wextra -Werror.</li>
+<li>You must use the command ar to create your library. Using the libtool command
+is forbidden.</li>
+<li>Your libft.a has to be created at the root of your repository.</li>
+</ul>
+<h3 id="libc-function">Libc function</h3>
+<p>To begin, you must redo a set of functions from the libc. Your functions will have the
+same prototypes and implement the same behaviors as the originals. They must comply
+with the way they are defined in their man. The only difference will be their names. They
+will begin with the ’ft_’ prefix. For instance, strlen becomes ft_strlen.</p>
+<h3 id="additional-function">Additional function</h3>
+<p>In this second part, you must develop a set of functions that are either not in the libc,
+or that are part of it but in a different form.</p>
+<h2 id="bonus-part">Bonus part</h2>
+<p>If you completed the mandatory part, do not hesitate to go further by doing this extra
+one. It will bring bonus points if passed successfully.
+Functions to manipulate memory and strings is very useful. But you will soon discover
+that manipulating lists is even more useful.</p>
+<hr />
+<table><thead><tr><th style="text-align: left">Libc functions</th><th style="text-align: left">Additional functions</th><th style="text-align: left">Bonus Functions</th></tr></thead><tbody>
+<tr><td style="text-align: left">memset</td><td style="text-align: left">ft_memalloc</td><td style="text-align: left">ft_lstnew</td></tr>
+<tr><td style="text-align: left">bzero</td><td style="text-align: left">ft_memdel</td><td style="text-align: left">ft_lstdelone</td></tr>
+<tr><td style="text-align: left">memcpy</td><td style="text-align: left">ft_strnew</td><td style="text-align: left">ft_lstdel</td></tr>
+<tr><td style="text-align: left">memccpy</td><td style="text-align: left">ft_strdel</td><td style="text-align: left">ft_lstadd</td></tr>
+<tr><td style="text-align: left">memmove</td><td style="text-align: left">ft_strclr</td><td style="text-align: left">ft_lstiter</td></tr>
+<tr><td style="text-align: left">memchr</td><td style="text-align: left">ft_striter</td><td style="text-align: left">ft_lstmap</td></tr>
+<tr><td style="text-align: left">memcmp</td><td style="text-align: left">ft_striteri</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strlen</td><td style="text-align: left">ft_strmap</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strdup</td><td style="text-align: left">ft_strmapi</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strcpy</td><td style="text-align: left">ft_strequ</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strncpy</td><td style="text-align: left">ft_strnequ</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strcat</td><td style="text-align: left">ft_strsub</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strlcat</td><td style="text-align: left">ft_strjoin</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strchr</td><td style="text-align: left">ft_strtrim</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strrchr</td><td style="text-align: left">ft_strsplit</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strstr</td><td style="text-align: left">ft_itoa</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strnstr</td><td style="text-align: left">ft_putchar</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strcmp</td><td style="text-align: left">ft_putstr</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">strncmp</td><td style="text-align: left">ft_putendl</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">atoi</td><td style="text-align: left">ft_putnbr</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">isalpha</td><td style="text-align: left">ft_putchar_fd</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">isdigit</td><td style="text-align: left">ft_putstr_fd</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">isalnum</td><td style="text-align: left">ft_putendl_fd</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">isascii</td><td style="text-align: left">ft_putnbr_fd</td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">isprint</td><td style="text-align: left"></td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">toupper</td><td style="text-align: left"></td><td style="text-align: left"></td></tr>
+<tr><td style="text-align: left">tolower</td><td style="text-align: left"></td><td style="text-align: left"></td></tr>
+</tbody></table>
+
+
+
+
+</div>
+
+</body>
+
+</html>

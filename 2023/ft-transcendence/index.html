@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/ft_transcendence">GitHub</a></p>
+<hr />
+<h1 id="transcendence">Transcendence</h1>
+<h2 id="summary">Summary</h2>
+<p>Is a group project about creation of a single-page web application, wich provides
+a nice user interface a chat, and real-time multiplayer online game.</p>
+<ul>
+<li>Frontend written in Sevlte</li>
+<li>Backend written in NestJS</li>
+<li>PostgreSQL as database</li>
+</ul>
+<h2 id="introduction">Introduction</h2>
+<p>This project is about creating a website for the mighty Pong contest!
+Thanks to your website, users will play Pong with others. You will provide a nice user
+interface, a chat, and real-time multiplayer online games!</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Your work has to comply with the following rules:</p>
+<ul>
+<li>Your website backend must be written in NestJS.</li>
+<li>The frontend must be written with a TypeScript framework of your choice.</li>
+<li>You are free to use any library you want to in this context. However, you must use
+the latest stable version of every library or framework used in your project.</li>
+<li>You must use a PostgreSQL database. That’s it, no other database.</li>
+<li>Your website must be a single-page application. The user should be able to use the
+Back and Forward buttons of the browser.</li>
+<li>Your website must be compatible with the latest stable up-to-date version of
+Google Chrome and one additional web browser of your choice.</li>
+<li>The user should encounter no unhandled errors and no warnings when browsing the
+website.</li>
+<li>Everything has to be launch by a single call to: docker-compose up --build</li>
+</ul>
+<h2 id="security-concerns">Security concerns</h2>
+<p>In order to create a fully functional website, here are a few security concerns that you
+have to tackle:</p>
+<ul>
+<li>Any password stored in your database must be hashed.</li>
+<li>Your website must be protected against SQL injections.</li>
+<li>You must implement some kind of server-side validation for forms and any user
+input.</li>
+</ul>
+<h2 id="user-account">User Account</h2>
+<ul>
+<li>The user must login using the OAuth system of 42 intranet.</li>
+<li>The user should be able to choose a unique name that will be displayed on the
+website.</li>
+<li>The user should be able to upload an avatar. If the user doesn’t upload an avatar,
+a default one must be set.</li>
+<li>The user should be able to enable two-factor authentication. For instance,
+Google Authenticator or sending a text message to their phone.</li>
+<li>The user should be able to add other users as friends and see their current status
+(online, offline, in a game, and so forth).</li>
+<li>Stats (such as: wins and losses, ladder level, achievements, and so forth) have to
+be displayed on the user profile.</li>
+<li>Each user should have a Match History including 1v1 games, ladder, and any-
+thing else useful. Anyone who is logged in should be able to consult it.</li>
+</ul>
+<h2 id="chat">Chat</h2>
+<p>You also have to create a chat for your users:</p>
+<ul>
+<li>The user should be able to create channels (chat rooms) that can be either public,
+or private, or protected by a password.</li>
+<li>The user should be able to send direct messages to other users.</li>
+<li>The user should be able to block other users. This way, they will see no more
+messages from the account they blocked.</li>
+<li>The user who has created a new channel is automatically set as the channel owner
+until they leave it.
+<ul>
+<li>The channel owner can set a password required to access the channel, change
+it, and also remove it.</li>
+<li>The channel owner is a channel administrator. They can set other users as
+administrators.</li>
+<li>A user who is an administrator of a channel can kick, ban or mute (for a
+limited time) other users, but not the channel owners.</li>
+</ul>
+</li>
+<li>The user should be able to invite other users to play a Pong game through the chat
+interface.</li>
+<li>The user should be able to access other players profiles through the chat interface.</li>
+</ul>
+<h2 id="game">Game</h2>
+<p>The main purpose of this website is to play Pong versus other players.</p>
+<ul>
+<li>Therefore, users should be able to play a live Pong game versus another player
+directly on the website.</li>
+<li>There must be a matchmaking system: the user can join a queue until they get
+automatically matched with someone else.</li>
+<li>It can be a canvas game, or it can be a game rendered in 3D, it can also be ugly,
+but in any case, it must be faithful to the original Pong (1972).</li>
+<li>You must offer some customization options (for example, power-ups or different
+maps). However, the user should be able to select a default version of the game
+without any extra features if they want to.</li>
+<li>The game must be responsive!</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

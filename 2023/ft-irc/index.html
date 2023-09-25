@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/ft_irc">GitHub</a></p>
+<hr />
+<h1 id="irc">IRC</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an group project about creating a small IRC server in C++98, that can be used with a
+real IRC client to chat, create chat rooms, send private messages to one or multiple users,
+via TCP connection.</p>
+<p>Command list:</p>
+<ul>
+<li>PASS: Set a 'connection password'.</li>
+<li>NICK: Set or change user's nickname.</li>
+<li>USER: Set username, hostname and realname at the beginning of connection.</li>
+<li>MODE: Set or removes users or channels options.</li>
+<li>QUIT: Terminate a client session.</li>
+<li>JOIN: Request access to the given channel/s.</li>
+<li>PART: Remove user from the given channel/s.</li>
+<li>TOPIC: Change or view the topic of a channel.</li>
+<li>KICK: Request the forced removal of a user from a channel.</li>
+<li>PRIVMSG: Send private messages to other users or channels.</li>
+</ul>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>void
+</span><span>Server::quit(Client &amp;client, const Parser::cmd_t &amp;cmd)
+</span><span>{
+</span><span>	LOG_INFO(&quot;quit: &quot; &lt;&lt; client.getNickname() &lt;&lt; &quot; leaving&quot;)
+</span><span>	client.sendMsg(&quot;ERROR :Leaving Server&quot;);
+</span><span>	if (!cmd-&gt;args.empty()) {
+</span><span>		LOG_TRACE(&quot;quit: Reason: &quot; &lt;&lt; cmd-&gt;args.front())
+</span><span>
+</span><span>		this-&gt;deleteClient(client.getFd(), cmd-&gt;args[0]);
+</span><span>
+</span><span>		return;
+</span><span>	}
+</span><span>	LOG_TRACE(&quot;quit: No reason&quot;)
+</span><span>	this-&gt;deleteClient(client.getFd());
+</span><span>}	// Server::quit
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>Internet Relay Chat or IRC is a text-based communication protocol on the Internet.
+It offers real-time messaging that can be either public or private. Users can exchange
+direct messages and join group channels.</p>
+<p>IRC clients connect to IRC servers in order to join channels. IRC servers are connected
+together to form a network.</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>You have to develop an IRC server in C++ 98.</p>
+<p>You mustn’t develop a client.
+You mustn’t handle server-to-server communication.</p>
+<p>Your executable will be run as follows:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>./ircserv &lt;port&gt; &lt;password&gt;
+</span></code></pre>
+<ul>
+<li>port: The port number on which your IRC server will be listening to for incoming
+IRC connections.</li>
+<li>password: The connection password. It will be needed by any IRC client that tries
+to connect to your server.</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>The server must be capable of handling multiple clients at the same time and never
+hang.</li>
+<li>Forking is not allowed. All I/O operations must be non-blocking.</li>
+<li>Only 1 poll() (or equivalent) can be used for handling all these operations (read,
+write, but also listen, and so forth).</li>
+<li>Several IRC clients exist. You have to choose one of them as a reference. Your
+reference client will be used during the evaluation process.</li>
+<li>Your reference client must be able to connect to your server without encountering
+any error.</li>
+<li>Communication between client and server has to be done via TCP/IP (v4 or v6).</li>
+<li>Using your reference client with your server must be similar to using it with any
+official IRC server. However, you only have to implement the following features:
+<ul>
+<li>You must be able to authenticate, set a nickname, a username, join a channel,
+send and receive private messages using your reference client.</li>
+<li>All the messages sent from one client to a channel have to be forwarded to
+every other client that joined the channel.</li>
+<li>You must have operators and regular users.</li>
+<li>Then, you have to implement the commands that are specific to channel
+operators:
+<ul>
+<li>KICK - Eject a client from the channel</li>
+<li>INVITE - Invite a client to a channel</li>
+<li>TOPIC - Change or view the channel topic</li>
+<li>MODE - Change the channel’s mode:
+<ul>
+<li>i: Set/remove Invite-only channel</li>
+<li>t: Set/remove the restrictions of the TOPIC command to channel
+operators</li>
+<li>k: Set/remove the channel key (password)</li>
+<li>o: Give/take channel operator privilege</li>
+<li>l: Set/remove the user limit to channe</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Of course, you are expected to write a clean code.</li>
+</ul>
+</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>Here are the extra features you can add to your IRC server so it looks even more like and
+actual IRC server:</p>
+<ul>
+<li>Handle file transfer.</li>
+<li>A bot.</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

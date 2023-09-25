@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/inception">GitHub</a></p>
+<hr />
+<h1 id="inception">Inception</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about system administration by using dockerfiles
+for the creation and management of custom images and micro services.
+Use of docker-compose for the deployment of containers, the creation and management of the network and
+storage space</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>├── docker-compose.yml
+</span><span>├── requirements
+</span><span>│   ├── mariadb
+</span><span>│   │   ├── Dockerfile
+</span><span>│   │   ├── conf
+</span><span>│   │   │   └── mariadb.conf
+</span><span>│   │   └── tools
+</span><span>│   │       └── mariadb.sh
+</span><span>│   ├── nginx
+</span><span>│   │   ├── Dockerfile
+</span><span>│   │   └── conf
+</span><span>│   │       └── nginx.conf
+</span><span>│   ├── wordpress
+</span><span>│   │   ├── Dockerfile
+</span><span>│   │   ├── conf
+</span><span>│   │   │   └── www.conf
+</span><span>│   │   ├── tools
+</span><span>└   └   └   └── wp.sh
+</span></code></pre>
+<h2 id="introduction">Introduction</h2>
+<p>This project aims to broaden your knowledge of system administration by using Docker.
+You will virtualize several Docker images, creating them in your new personal virtual
+machine.</p>
+<ul>
+<li>This project need to be done on a Virtual Machine.</li>
+<li>All the files required for the configuration of your project must be placed in a srcs
+folder.</li>
+<li>A Makefile is also required and must be located at the root of your directory. It
+must set up your entire application (i.e., it has to build the Docker images using
+docker-compose.yml).</li>
+<li>This subject requires putting into practice concepts that, depending on your back-
+ground, you may not have learned yet. Therefore, we advise you not to hesitate to
+read a lot of documentation related to Docker usage, as well as anything else you
+will find helpful in order to complete this assignment.</li>
+</ul>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>This project consists in having you set up a small infrastructure composed of different
+services under specific rules. The whole project has to be done in a virtual machine. You
+have to use docker compose.</p>
+<p>Each Docker image must have the same name as its corresponding service.
+Each service has to run in a dedicated container.
+For performance matters, the containers must be built either from the penultimate stable
+version of Alpine or Debian. The choice is yours.
+You also have to write your own Dockerfiles, one per service. The Dockerfiles must
+be called in your docker-compose.yml by your Makefile.
+It means you have to build yourself the Docker images of your project. It is then for-
+bidden to pull ready-made Docker images, as well as using services such as DockerHub
+(Alpine/Debian being excluded from this rule).
+You then have to set up:</p>
+<ul>
+<li>A Docker container that contains NGINX with TLSv1.2 or TLSv1.3 only.</li>
+<li>A Docker container that contains WordPress + php-fpm (it must be installed and
+configured) only without nginx.</li>
+<li>A Docker container that contains MariaDB only without nginx.</li>
+<li>A volume that contains your WordPress database.</li>
+<li>A second volume that contains your WordPress website files.</li>
+<li>A docker-network that establishes the connection between your containers.</li>
+</ul>
+<p>Your containers have to restart in case of a crash.</p>
+<ul>
+<li>In your WordPress database, there must be two users, one of them being the ad-
+ministrator. The administrator’s username can’t contain admin/Admin or admin-
+istrator/Administrator (e.g., admin, administrator, Administrator, admin-123, and
+so forth).</li>
+</ul>
+<p>To make things simpler, you have to configure your domain name so it points to your
+local IP address.
+This domain name must be login.42.fr. Again, you have to use your own login.
+For example, if your login is wil, wil.42.fr will redirect to the IP address pointing to
+wil’s website.</p>
+<h2 id="bonus-part">Bonus part</h2>
+<p>For this project, the bonus part is aimed to be simple.</p>
+<p>A Dockerfile must be written for each extra service. Thus, each one of them will run
+inside its own container and will have, if necessary, its dedicated volume.</p>
+<p>Bonus list:</p>
+<ul>
+<li>Set up redis cache for your WordPress website in order to properly manage the
+cache.</li>
+<li>Set up a FTP server container pointing to the volume of your WordPress website.</li>
+<li>Create a simple static website in the language of your choice except PHP (Yes, PHP
+is excluded!). For example, a showcase site or a site for presenting your resume.</li>
+<li>Set up Adminer.</li>
+<li>Set up a service of your choice that you think is useful. During the defense, you
+will have to justify your choice</li>
+</ul>
+
+
+
+
+</div>
+
+</body>
+
+</html>

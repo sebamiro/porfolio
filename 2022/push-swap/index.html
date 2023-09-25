@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Sebastián Miró</title>
+</head>
+
+<style>
+
+body {
+	background: #121212;
+    font: 17px/1.5 system-ui, sans-serif;
+	color: #fff;
+    margin: 10vh 10vw;
+}
+
+pre {
+    padding: 1vmin;
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+code {
+    border-radius: 4px;
+    background-color: #222222 !important;
+}
+
+img {
+    max-width: 66ch;
+}
+
+table {
+    width: 100%;
+}
+
+a, a:visited {
+    font-size: 17px;
+    color: #F2F2F2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover,
+#title:hover > a {
+    color: #FF6913;
+} 
+
+#title:hover > span {
+    visibility: visible !important;
+}
+
+</style>
+
+<body>
+
+<div style="max-width: 66ch;">
+    
+
+
+    <a href=https:&#x2F;&#x2F;sebamiro.github.io&#x2F;porfolio&#x2F; >Back</a>
+    <p><a target="blank" href="https://github.com/sebamiro/push_swap42/">GitHub</a></p>
+<hr />
+<h1 id="push-swap">Push_swap</h1>
+<h2 id="summary">Summary</h2>
+<p>Is an individual project about creating an algorithm that efficiently sorts
+a stack of integers in ascending order using only a specific set of operations</p>
+<p>There are two stacks: Stack A and Stack B, initially, all the numbers to be sorted
+are in Stack A, while Stack B is empty. Operations allowed on the stacks are limited:</p>
+<pre style="background-color:#2b303b;color:#c0c5ce;"><code><span>	sb:   swaps the 2 top elements of b
+</span><span>    sa:   swaps the 2 top elements of a
+</span><span>	ss:   both sa and sb
+</span><span>	pa:   moves the top element of b at the top of a
+</span><span>	pb:   moves the top element of a at the top of b
+</span><span>	ra:   shifts all elements of a from bottom to top
+</span><span>	rb:   shifts all elements of b from bottom to top
+</span><span>	rr:   both ra and rb
+</span><span>	rra:  shifts all elements of a from top to bottom
+</span><span>	rrb:  shifts all elements of b from top to bottom
+</span><span>	rrr:  both rra and rrb
+</span></code></pre>
+<p>The algorithm needs to be efficient, aiming for the smallest number of steps (operations) possible,
+taking into account edge cases and error handling.</p>
+<h2 id="introduction">Introduction</h2>
+<p>The Push swap project is a very simple and a highly straightforward algorithm project:
+data must be sorted.</p>
+<p>You have at your disposal a set of integer values, 2 stacks, and a set of instructions
+to manipulate both stacks.</p>
+<p>Your goal? Write a program in C called push_swap which calculates and displays
+on the standard output the smallest program, made of Push swap language instructions,
+that sorts the integers received as arguments.</p>
+<p>Writing a sorting algorithm is always a very important step in a developer’s journey. It
+is often the first encounter with the concept of complexity.</p>
+<p>Sorting algorithms and their complexity are part of the classic questions discussed
+during job interviews. It’s probably a good time to look at these concepts since you’ll
+have to face them at some point.</p>
+<p>The learning objectives of this project are rigor, use of C, and use of basic algorithms.
+Especially focusing on their complexity.</p>
+<p>Sorting values is simple. To sort them the fastest way possible is less simple. Especially
+because from one integers configuration to another, the most efficient sorting solution can
+differ.</p>
+<h2 id="mandatory-part">Mandatory part</h2>
+<p>Your project must comply with the following rules:</p>
+<ul>
+<li>You have to turn in a Makefile which will compile your source files. It must not
+relink.</li>
+<li>Global variables are forbidden.</li>
+<li>You have to write a program named push_swap that takes as an argument the stack
+a formatted as a list of integers. The first argument should be at the top of the
+stack (be careful about the order).</li>
+<li>The program must display the smallest list of instructions possible to sort the stack
+a, the smallest number being at the top.</li>
+<li>Instructions must be separated by a ’\n’ and nothing else.</li>
+<li>The goal is to sort the stack with the lowest possible number of operations. During
+the evaluation process, the number of instructions found by your program will be
+compared against a limit: the maximum number of operations tolerated. If your
+program either displays a longer list or if the numbers aren’t sorted properly, your
+grade will be 0.</li>
+<li>If no parameters are specified, the program must not display anything and give the
+prompt back.</li>
+<li>In case of error, it must display &quot;Error&quot; followed by a ’\n’ on the standard error.
+Errors include for example: some arguments aren’t integers, some arguments are
+bigger than an integer and/or there are duplicates.</li>
+</ul>
+<h2 id="bonus-part">Bonus part</h2>
+<p>Write a program named checker that takes as an argument the stack a formatted
+as a list of integers. The first argument should be at the top of the stack (be careful
+about the order). If no argument is given, it stops and displays nothing.</p>
+<p>It will then wait and read instructions on the standard input, each instruction will
+be followed by ’\n’. Once all the instructions have been read, the program has to
+execute them on the stack received as an argument</p>
+<p>If after executing those instructions, the stack a is actually sorted and the stack b
+is empty, then the program must display &quot;OK&quot; followed by a ’\n’ on the standard
+output.</p>
+<p>In every other case, it must display &quot;KO&quot; followed by a ’\n’ on the standard output</p>
+<p>In case of error, you must display &quot;Error&quot; followed by a ’\n’ on the standard er-
+ror. Errors include for example: some arguments are not integers, some arguments
+are bigger than an integer, there are duplicates, an instruction doesn’t exist and/or
+is incorrectly formatted.</p>
+
+
+
+
+</div>
+
+</body>
+
+</html>
